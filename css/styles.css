@@ -470,8 +470,11 @@ padding: 32px 0;
     background-color: #31d0aa;
 }
 
+
+
 .footer-form {
     display: flex;
+    gap: 24px;
     
 }
 
@@ -484,14 +487,14 @@ padding: 32px 0;
 }
 .right-container {
     margin-left: 80px;
-
 }
 
 .footer-email-input {
     font-weight: 400;
     font-size: 12px;
     line-height: 2;
-    padding: 8px 16px;
+    padding-left: 16px;
+    letter-spacing: 0.04em;
 
     border: 1px solid #fff;
     border-radius: 4px;
@@ -508,12 +511,12 @@ padding: 32px 0;
     color: #fff;
 }
 .footer-btn {
+    cursor: pointer;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     gap: 16px;
     border: none;
-    margin-left: 24px;
     border-radius: 4px;
     padding: 8px 24px;
     width: 165px;
@@ -542,7 +545,7 @@ padding: 32px 0;
     visibility: hidden;
     pointer-events: none;
 
-    transition: opacity, visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
     transition-delay: 50ms;
 }
 .backdrop.is-open {
@@ -553,11 +556,11 @@ padding: 32px 0;
     transition-delay: 0ms;
 }
 .modal {
-    padding: 24px;
+    padding: 72px 24px 24px;
     position: absolute;
     top: 50%;
     left: 50%;
-    background-color: #fff;
+    background: #fcfcfc;
     border-radius: 4px;
     width: 408px;
     min-height: 584px;
@@ -590,11 +593,12 @@ padding: 32px 0;
     border: 1px solid rgba(0, 0, 0, 0.1);
     background-color: #E7E9FC;
 
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    transition-property: background-color, border-color;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property:border-color;
 }
 .modal-btn:hover, 
 .modal-btn:focus {
+    border: none;
     background-color: #404bbf;
     border-color:#404bbf;
 }
@@ -615,7 +619,7 @@ padding: 32px 0;
     letter-spacing: 0.02em;
     text-align: center;
     margin-bottom: 16px;
-    margin-top: 48px;
+    /* margin-top: 48px; */
 }
 
 
@@ -630,7 +634,7 @@ padding: 32px 0;
 .form-label {
     font-weight: 400;
     font-size: 12px;
-    line-height: 1.16667;
+    line-height: 1.17;
     letter-spacing: 0.04em;
     color: #8e8f99;
     display: block;
@@ -642,24 +646,27 @@ padding: 32px 0;
 }
 
 .input {
+    background-color: transparent;
     font-size: 12px;
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
     height: 40px;
     width: 100%;
-    padding: 8px 42px;
+    padding-left: 38px;
     outline: transparent;
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .input:focus {
-    border: 1px solid #4d5ae5;
+    border-color:#4d5ae5;
 }
 .input-icon {
     position: absolute;
     top: 50%;
-    left: 19px;
+    left: 16px;
     transform: translateY(-50%);
     pointer-events: none;
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
     
 }
 .input:focus + .input-icon {
@@ -680,6 +687,7 @@ padding: 32px 0;
     outline: transparent;
     
 }
+
 .textarea-input::placeholder {
     color: rgba(46, 47, 66, 0.4);
     font-size: 12px;
@@ -703,21 +711,23 @@ padding: 32px 0;
     align-items: center;
     width: 16px;
     height: 16px;
-    border-radius: 4px;
-    border: 1px solid rgba(46, 47, 66, 0.4);;
     margin-right: 8px;
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    transition-property: background-color, border-color;
+
+    fill: transparent;
+    border-radius: 2px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    /* transition-property:border-color; */
 }
 
 input[type='checkbox']:checked + .privacy-label .modal-checkbox {
   background-color: #404bbf;
-  border-color: #404bbf;
+  border: none;
+  fill: #f4f4fd;
 }
 
 .modal-checkbox-icon {
     opacity: 0;
-    fill: #f4f4fd;
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -730,7 +740,7 @@ outline: 1px solid #434455;
 outline-offset: 2px;
 }
 .privacy-label {
-    
+    line-height: 1.17;
     user-select: none;
     font-size: 12px;
     letter-spacing: 0.04em;
@@ -743,6 +753,9 @@ outline-offset: 2px;
     text-decoration-skip-ink: none;
     color: #4d5ae5;
 }
-
+.modal-btn {
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+}
 
 /* #endregion  */
